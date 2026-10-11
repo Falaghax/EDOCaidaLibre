@@ -1,0 +1,50 @@
+# ===== LaTeX: archivos auxiliares generados al compilar =====
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.synctex(busy)
+*.bbl
+*.blg
+*.bcf
+*.run.xml
+*.nav
+*.snm
+*.vrb
+*.idx
+*.ind
+*.ilg
+*.glo
+*.gls
+*.xdv
+*.dvi
+_minted*/
+
+# PDF compilado (se regenera). Borra esta línea si quieren versionarlo.
+main.pdf
+
+# ===== Python =====
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+.ipynb_checkpoints/
+.pytest_cache/
+
+# ===== Editores y sistema =====
+.vscode/
+.idea/
+*.swp
+*~
+.DS_Store
+Thumbs.db
+
+# ===== Tracker: copias de respaldo =====
+*.trk~
+*.bak

@@ -1,6 +1,7 @@
 # Fdb version 4
-["pdflatex"] 1791667383.18715 "main.tex" "main.pdf" "main" 1791667384.3423 0
+["pdflatex"] 1791671108.212 "/home/falaghax/Documents/EDOCaidaLibre/main.tex" "main.pdf" "main" 1791671109.26012 0
   "/etc/texmf/web2c/texmf.cnf" 1791653167.77841 475 c0e671620eb5563b2130f56340a5fde8 ""
+  "/home/falaghax/Documents/EDOCaidaLibre/main.tex" 1791667375.08764 6271 f3441022d82cead85d1906680e1150f2 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm" 1136768653 2172 fd0c924230362ff848a33632ed45dc23 ""
@@ -205,8 +206,8 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1769369718 41603 27f93b3067076450172040dcd57ca8b3 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1791656538 5541477 3118940318599480888143717dd32d64 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1791656584 3641162 3ab602b690ab0af6aa48840a4da06136 ""
-  "main.aux" 1791667384.20516 1812 1205011c91c21e87f2190ca806f647d2 "pdflatex"
-  "main.out" 1791667384.2063 1725 a762413f3354984c7974e002b1bfb198 "pdflatex"
+  "main.aux" 1791671109.15862 1812 1205011c91c21e87f2190ca806f647d2 "pdflatex"
+  "main.out" 1791671109.16062 1725 a762413f3354984c7974e002b1bfb198 "pdflatex"
   "main.tex" 1791667375.08764 6271 f3441022d82cead85d1906680e1150f2 ""
   (generated)
   "main.aux"

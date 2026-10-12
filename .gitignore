@@ -48,3 +48,7 @@ Thumbs.db
 # ===== Tracker: copias de respaldo =====
 *.trk~
 *.bak
+
+# ===== Claude Code =====
+.claude/
+CLAUDE.md

@@ -67,7 +67,9 @@ simGlobo()
 simPelota()
 
 ######################################################################
-# AJUSTE AUTOMÁTICO DE k Y GRÁFICAS (generado con asistencia de Claude)
+#                 AJUSTE AUTOMÁTICO DE k Y GRÁFICAS
+#                 (A partir de aqui, el código, no es de mi autoría,
+#                 fue asistido por parte de la herramienta Claude Code)
 ######################################################################
 
 # Datos limpios (sin filas con v=NaN) para el optimizador y las gráficas

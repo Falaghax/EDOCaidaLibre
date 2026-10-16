@@ -12,30 +12,30 @@
 \pgfplotsset{compat=1.18}     % Asegura compatibilidad de pgfplots para evitar warnings
 
 \begin{document}
-	
+
 	% ==========================================
 	% TÍTULO DEL REPORTE
 	% ==========================================
 	\title{ Resistencia dinámica de fuerzas viscosas  \\}
-	
+
 	\author{\IEEEauthorblockN{Jennifer Ovalle - Edson Pereira - Carlos Mogollón}
 		\IEEEauthorblockA{\\ FABIQ $-$ FISICC\\
 			Universidad Galileo\\
 			Guatemala, Guatemala}}
-	
+
 	\maketitle
-	
+
 	% ==========================================
 	% RESUMEN (ABSTRACT)
 	% ==========================================
 	\begin{abstract}
 		Este experimento se realizó para implementar modelos matemáticos basados en ecuaciones diferenciales ordinarias (EDO) para lograr describir un fenómeno físico.
-		Dicho fenómeno fue el de la resistencia dinámica de las fuerzas viscosas, en este caso se analiza el comportamiento de una pelota y un globo al dejarlas caer como caída libre desde un sexto y primer nivel respectivamente (esto con la idea de que alcancen sus velocidades terminales), 
+		Dicho fenómeno fue el de la resistencia dinámica de las fuerzas viscosas, en este caso se analiza el comportamiento de una pelota y un globo al dejarlas caer como caída libre desde un sexto y primer nivel respectivamente (esto con la idea de que alcancen sus velocidades terminales),
 		con el fin de observar sus comportamientos a través del aire como fluido viscoso. Se graban ambos videos de las dos caídas, se guardan los datos posición-tiempo y luego se procesan en Tracker para poder graficar la curva velocidad vs tiempo.
 		Completar...
 		Esta sección es un breve resumen de los aspectos más importantes del reporte (máximo 150-200 palabras). Se incluye el propósito del experimento, el método de recolección de datos utilizado, los hallazgos cuantitativos más relevantes (como los coeficientes de enfriamiento hallados) y la conclusión principal basada en el comportamiento de los materiales.
 	\end{abstract}
-	
+
 	% ==========================================
 	% INTRODUCCIÓN
 	% ==========================================
@@ -48,26 +48,33 @@
 		\item Los objetivos principales del proyecto.
 		\item Hipótesis clara sobre qué material retendrá mejor el calor y por qué, basándose en la naturaleza química del recipiente.
 	\end{itemize}
-	
+
+
+	% ==========================================
+	% MODELO MATEMATICO
+	% ==========================================
+	\section{Modelo Matemático}
+
+
 	% ==========================================
 	% PROCEDIMIENTO
 	% ==========================================
 	\section{Procedimiento}
 	Breve descripción macroscópica de cómo se montó el experimento en el laboratorio o en casa.
-	
+
 	\subsection{Materiales y Equipamiento}
 	Detalle de los recursos físicos, digitales o de hardware empleados.
-	\begin{itemize} 
+	\begin{itemize}
 		\item \textbf{Recipientes:} Descripción de los 3 materiales elegidos (ej. Aluminio, Vidrio, Poliestireno).
 		\item \textbf{Sensor/Medición:} Termómetro convencional o la Tarjeta de Desarrollo Institucional con sensor de temperatura.
 		\item \textbf{Software (si aplica):} Entorno de desarrollo para el script de adquisición de datos (Python / Java) y software para el procesamiento de texto (\LaTeX).
 	\end{itemize}
-	
+
 	\subsection{Diagrama de Configuración del Laboratorio}
 	Incluya un diagrama, esquema o fotografía del montaje experimental (la disposición del recipiente, el agua caliente y la posición del sensor/termómetro).
 
-	
-	\subsection{Pasos del Procedimiento}        		
+
+	\subsection{Pasos del Procedimiento}
 	Se enumeran cronológicamente los pasos seguidos para la recolección de datos y la experimentación:
 	\begin{enumerate}
 		\item Medición y vertido del volumen idéntico de agua caliente en los contenedores.
@@ -75,21 +82,21 @@
 		\item Registro periódico de la temperatura del fluido a intervalos constantes de tiempo.
 		\item Finalización del proceso al alcanzar la estabilización térmica.
 	\end{enumerate}
-	
+
 	% ==========================================
 	% RESULTADOS
 	% ==========================================
 	\section{Resultados}
 	Esta sección incluye \textbf{únicamente} los datos crudos o procesados y las curvas teóricas obtenidas. No se introducen interpretaciones aquí.
-	
+
 	\subsection{Tabla de Datos Experimentales}
 	A continuación, se muestra una tabla de ejemplo con la estructura requerida para ordenar el tiempo ($t$) y la temperatura medida ($T$):
-	
-	
+
+
 	\subsection{Gráficas y Ajuste del Modelo}
 	En esta sección deben graficar sus datos. El siguiente gráfico lee directamente el archivo adjunto en el .zip para generar los puntos y la línea de mejor ajuste:
-	
-	
+
+
 	% ==========================================
 	% DISCUSIÓN / ANÁLISIS
 	% ==========================================
@@ -100,27 +107,27 @@
 		\item Calculen el valor exacto del coeficiente global de enfriamiento ($k$) para cada material.
 		\item Expliquen el comportamiento de las curvas analizando las propiedades termodinámicas de los materiales (conductividad térmica, capacidad calorífica, aislamiento). ¿Se validó la hipótesis?
 	\end{itemize}
-	
+
 	% ==========================================
 	% CONCLUSIÓN
 	% ==========================================
 	\section{Conclusión}
 	Esta sección incluye un cierre conciso basado en la evidencia de los resultados y cómo se relacionan con los objetivos iniciales. Se debe destacar de manera clara qué se aprendió acerca del modelado por ecuaciones diferenciales en procesos de transferencia de calor reales.
-	
+
 	% ==========================================
 	% REFERENCIAS
 	% ==========================================
 	\begin{thebibliography}{1}
-		
+
 		\bibitem{Zill}
 		D.~G.~Zill, \emph{Ecuaciones diferenciales con aplicaciones de modelado}, 11a ed. Cengage Learning, 2018.
-		
+
 		\bibitem{Incropera}
 		F.~P.~Incropera, D.~P.~DeWitt, \emph{Fundamentos de transferencia de calor}, 4a ed. México: Prentice Hall, 1999.
-		
+
 		\bibitem{LabWrite}
 		M.~Carter, E.~Weiebe, and M.~Ferzli, \emph{LabWrite}, \url{https://www.ncsu.edu/labwrite/index_labwrite.htm}, NC~State~University, 2004.
-		
+
 	\end{thebibliography}
-	
+
 \end{document}

@@ -84,5 +84,5 @@ for ax, (nombre, obj) in zip(axes, objetos.items()):
 
 fig.suptitle(r"Ajuste por solución analítica — $v(t) = \frac{mg}{k} + \left(v_0 - \frac{mg}{k}\right)e^{-k(t-t_0)/m}$")
 plt.tight_layout()
-plt.savefig("v_vs_t_analitico.png", dpi=150, bbox_inches="tight")
+plt.savefig("Media/v_vs_t_analitico.png", dpi=150, bbox_inches="tight")
 plt.show()

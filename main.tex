@@ -72,7 +72,13 @@
 	\end{itemize}
 
 	\subsection{Diagrama de Configuración del Laboratorio}
-	Incluya un diagrama, esquema o fotografía del montaje experimental (la disposición del recipiente, el agua caliente y la posición del sensor/termómetro).
+
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=10em]{Media/d1.png}
+		\caption{Configuración de globo y pelota en función de los niveles del edificio de la Universidad Galileo.}
+		\label{fig:montaje}
+	\end{figure}
 
 
 	\subsection{Pasos del Procedimiento}
@@ -88,16 +94,48 @@
 	% RESULTADOS
 	% ==========================================
 	\section{Resultados}
-	Esta sección incluye \textbf{únicamente} los datos crudos o procesados y las curvas teóricas obtenidas. No se introducen interpretaciones aquí.
-
+	
+	
 	\subsection{Tabla de Datos Experimentales}
-	A continuación, se muestra una tabla de ejemplo con la estructura requerida para ordenar el tiempo ($t$) y la temperatura medida ($T$):
 
+	\begin{table}[H]
+		\centering
+		\begin{tabular}{ccc|ccc}
+			\hline
+			\multicolumn{3}{c|}{\textbf{Globo} ($m = 0.002$~kg)} & \multicolumn{3}{c}{\textbf{Pelota} ($m = 0.443$~kg)} \\
+			$t$ (s) & $y$ (m) & $v$ (m/s) & $t$ (s) & $y$ (m) & $v$ (m/s) \\
+			\hline
+			0.017 & $-0.012$ & 0.051 & 0.067 & $-0.099$ & 0.460 \\
+			0.583 & $-0.278$ & 0.852 & 0.283 & $-0.308$ & 1.334 \\
+			1.166 & $-0.673$ & 0.513 & 0.500 & $-0.707$ & 2.361 \\
+			1.733 & $-0.975$ & 0.809 & 0.717 & $-1.285$ & 3.182 \\
+			2.316 & $-1.603$ & 1.480 & 0.933 & $-2.075$ & 4.195 \\
+			2.883 & $-2.361$ & 1.262 & 1.133 & $-3.077$ & 5.731 \\
+			3.466 & $-2.963$ & 1.050 & 1.350 & $-4.477$ & 7.630 \\
+			4.032 & $-3.590$ & 0.872 & 1.567 & $-6.399$ & 9.794 \\
+			4.616 & $-4.267$ & 1.423 & 1.783 & $-8.969$ & 14.045 \\
+			5.182 & $-5.217$ & 1.766 & 2.000 & $-12.630$ & 15.488 \\
+			\hline
+		\end{tabular}
+		\caption{NOTA: Esta tabla está truncada.}
+	\end{table}
 
 	\subsection{Gráficas y Ajuste del Modelo}
-	En esta sección deben graficar sus datos. El siguiente gráfico lee directamente el archivo adjunto en el .zip para generar los puntos y la línea de mejor ajuste:
 
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=\columnwidth]{Media/Kutta-globo.png}
+		\caption{Solución numérica por RK4 para el globo.}
+		\label{fig:rk4-globo}
+	\end{figure}
 
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=\columnwidth]{Media/Kutta-pelota.png}
+		\caption{Solución numérica por RK4 para la pelota.}
+		\label{fig:rk4-pelota}
+	\end{figure}
+	
 	% ==========================================
 	% DISCUSIÓN / ANÁLISIS
 	% ==========================================

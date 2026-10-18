@@ -60,35 +60,50 @@
 	% ==========================================
 	% PROCEDIMIENTO
 	% ==========================================
-	\section{Procedimiento}
-	Breve descripción macroscópica de cómo se montó el experimento en el laboratorio o en casa.
-
+	
 	\subsection{Materiales y Equipamiento}
 	\begin{itemize}
 		\item \textbf{Pelota:} Se usó una pelota de fútbol mediana de masa 0.443kg.
 		\item \textbf{Globo:} Un globo normal, de masa 0.002kg 
-		\item \textbf{(Software) Tracker:} Para facilitar la toma de datos, se usó tracker que cálcula y gráfica automáticamente solo con el video.
-		\item \textbf{(Software) VsCode:} Para poder editar el reporte .tex (Latex), crear la app y el ajuste de IA (Python)
+		\item \textbf{(Software) Tracker:} Para facilitar la toma de datos, se usó tracker que cálcula y gráfica automáticamente solo con el video \cite{Tracker}.
+		\item \textbf{(Software) VsCode:} Para poder editar el reporte .tex (Latex), crear la app y el ajuste de IA (Python, con las librerías NumPy \cite{NumPy} y SciPy \cite{SciPy})
 		\item \textbf{(Software) Github:} Se usó como repositorio general del proyecto completo, para que los 3 integrantes pudiesen subir y estar actualizados con los archivos del proyecto.
-		\item \textbf{(IA) Claude:} Para hacer el ajuste con IA y ayuda con la app.
+		\item \textbf{(IA) Claude:} Para hacer el ajuste con IA y ayuda con la app \cite{Claude}.
 	\end{itemize}
 	\subsection{Diagrama de Configuración del Laboratorio}
 
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=10em]{Media/d1.png}
+		\includegraphics[width=10em]{Media/d1.png} 
 		\caption{Configuración de globo y pelota en función de los niveles del edificio de la Universidad Galileo.}
 		\label{fig:montaje}
 	\end{figure}
 
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=\linewidth]{Media/Bloques.png}
+		\caption{Diagrama de bloques del experimento}
+		\label{fig:bloques}
+	\end{figure}
+
+	\subsection{Definiciones}
+	\begin{itemize}
+		\item \textbf{viscosidad:} La viscosidad es una característica física de los fluidos que determina su resistenca a deformarse gradualmente por fuerzas externas \cite{Viscosidad}.
+		\item \textbf{coeficiente k:} El coeficiente k determina el grado de viscosidad de un fluido, a mayores valores, más dificil deformarlo.
+		\item \textbf{Velocidad terminal:} El coeficiente k es proporcional a la velocidad del objeto. A mayor velocidad, mayor fuerza viscosa. Cuando la fuerza viscosa es igual a la velocidad, esta deja de acelerar \cite{VelTerminal}.
+		\item \textbf{Método Runge-Kutta:} El método Runge-Kutta usa un sistema de valores con pesos para predecir el resultado de una EDO. Esto lo usa midiendo cuatro valores de $k$, los cuales dependen del anterior, para luego sumarlos con pesos asociados \cite{RungeKutta}.
+		\item \textbf{$R^2$:} Determina la cercanía de una regresión lineal en función a la dispersión de los puntos.
+	\end{itemize}
+
+
 
 	\subsection{Pasos del Procedimiento}
-	Se enumeran cronológicamente los pasos seguidos para la recolección de datos y la experimentación:
 	\begin{enumerate}
-		\item Medición y vertido del volumen idéntico de agua caliente en los contenedores.
-		\item Toma de la temperatura ambiente inicial ($T_m$).
-		\item Registro periódico de la temperatura del fluido a intervalos constantes de tiempo.
-		\item Finalización del proceso al alcanzar la estabilización térmica.
+		\item El primer paso fue determinar la ubicación para realizar los experimentos. En nuestro caso, decidimos utilizar los puentes de la universidad, ya que son altos y protegen contra el viento para el caso del globo.
+		\item El el lado del edificio hicimos una marca con tape de un metro para que Tracker pudiera saber la escala de nuestro video.
+		\item Para la pelota, escogimos el sexto nivel debido a su velocidad terminal alta. La dejamos caer y grabamos el video en un telefono,
+		\item Para el globo, la dejamos caer del primer nivel para minimizar el efecto del aire sobre el mismo.
+		\item Utilizamos Tracker para generar una gráfica de posición y velocidad vs. Tiempo, las cuales utilizamos para las gráficas teóricas.
 	\end{enumerate}
 
 	% ==========================================
@@ -159,14 +174,26 @@
 	% ==========================================
 	\begin{thebibliography}{1}
 
-		\bibitem{Zill}
-		D.~G.~Zill, \emph{Ecuaciones diferenciales con aplicaciones de modelado}, 11a ed. Cengage Learning, 2018.
+		\bibitem{Viscosidad}
+		``Viscosidad,'' \emph{Concepto.de}. [En línea]. Disponible: \url{https://concepto.de/viscosidad/}
 
-		\bibitem{Incropera}
-		F.~P.~Incropera, D.~P.~DeWitt, \emph{Fundamentos de transferencia de calor}, 4a ed. México: Prentice Hall, 1999.
+		\bibitem{VelTerminal}
+		``¿Qué es la velocidad terminal? Definición, fórmula, cálculo y ejemplos,'' \emph{Estudyando}. [En línea]. Disponible: \url{https://estudyando.com/que-es-la-velocidad-terminal-definicion-formula-calculo-y-ejemplos/}
 
-		\bibitem{LabWrite}
-		M.~Carter, E.~Weiebe, and M.~Ferzli, \emph{LabWrite}, \url{https://www.ncsu.edu/labwrite/index_labwrite.htm}, NC~State~University, 2004.
+		\bibitem{RungeKutta}
+		S.~Brorson, ``4.6: Runge-Kutta methods,'' en \emph{Numerically Solving Ordinary Differential Equations}, LibreTexts Mathematics. [En línea]. Disponible: \url{https://math.libretexts.org/Bookshelves/Differential_Equations/Numerically_Solving_Ordinary_Differential_Equations_(Brorson)/04\%3A_Predictor-corrector_methods_and_Runge-Kutta/4.06\%3A_Runge-Kutta_methods}
+
+		\bibitem{Tracker}
+		D.~Brown, R.~Hanson y W.~Christian, \emph{Tracker Video Analysis and Modeling Tool}, versión 6.2.0. Open Source Physics. [En línea]. Disponible: \url{https://physlets.org/tracker/}
+
+		\bibitem{NumPy}
+		C.~R.~Harris \emph{et al.}, ``Array programming with NumPy,'' \emph{Nature}, vol.~585, pp.~357--362, 2020.
+
+		\bibitem{SciPy}
+		P.~Virtanen \emph{et al.}, ``SciPy 1.0: Fundamental algorithms for scientific computing in Python,'' \emph{Nature Methods}, vol.~17, pp.~261--272, 2020.
+
+		\bibitem{Claude}
+		Anthropic, \emph{Claude Code} [Asistente de IA], 2026. Utilizado para el código del ajuste de $k$ (\texttt{ajusteAnalitico.py}) y la aplicación \texttt{runge\_kutta\_app.py}. [En línea]. Disponible: \url{https://claude.com/claude-code}
 
 	\end{thebibliography}
 

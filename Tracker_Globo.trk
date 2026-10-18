@@ -3,14 +3,14 @@
     <property name="semantic_version" type="string">6.2.0</property>
     <property name="width" type="double">478.0</property>
     <property name="height" type="double">850.0</property>
-    <property name="magnification" type="double">2.8284271247461903</property>
-    <property name="center_x" type="int">627</property>
-    <property name="center_y" type="int">1713</property>
+    <property name="magnification" type="double">0.7071067811865476</property>
+    <property name="center_x" type="int">323</property>
+    <property name="center_y" type="int">316</property>
     <property name="videoclip" type="object">
     <object class="org.opensourcephysics.media.core.VideoClip">
         <property name="video" type="object">
         <object class="org.opensourcephysics.media.xuggle.XuggleVideo">
-            <property name="path" type="string">../../Downloads/WhatsApp Video 2026-10-11 at 5.30.50 PM.mp4</property>
+            <property name="path" type="string">Media/Video Globo.mp4</property>
             <property name="start_times" type="array" class="[D">
                 <property name="array" type="string">{0.0,73.888,90.544,107.211,123.877,140.533,157.200,173.866,190.522,207.188,223.844,240.511,257.177,273.833,290.500,307.166,323.822,340.488,357.155,373.811,390.477,407.144,423.800,440.466,457.133,473.788,490.455,507.111,523.777,540.444,557.100,573.766,590.433,607.088,623.755,640.422,657.077,673.744,690.411,707.066,723.733,740.388,757.055,773.722,790.377,807.044,823.711,840.366,857.033,873.700,890.355,907.022,923.688,940.344,957.011,973.677,990.333,1007,1023.666,1040.322,1056.988,1073.644,1090.311,1106.977,1123.633,1140.300,1156.966,1173.622,1190.288,1206.955,1223.611,1240.277,1256.944,1273.600,1290.266,1306.933,1323.588,1340.255,1356.911,1373.577,1390.244,1406.900,1423.566,1440.233,1456.888,1473.555,1490.222,1506.877,1523.544,1540.211,1556.866,1573.533,1590.200,1606.855,1623.522,1640.177,1656.844,1673.511,1690.166,1706.833,1723.500,1740.155,1756.822,1773.488,1790.144,1806.811,1823.477,1840.133,1856.800,1873.466,1890.122,1906.788,1923.455,1940.111,1956.777,1973.433,1990.100,2006.766,2023.422,2040.088,2056.755,2073.411,2090.077,2106.744,2123.400,2140.066,2156.733,2173.388,2190.055,2206.711,2223.377,2240.044,2256.700,2273.366,2290.033,2306.688,2323.355,2340.022,2356.677,2373.344,2390.011,2406.666,2423.333,2440,2456.655,2473.322,2489.977,2506.644,2523.311,2539.966,2556.633,2573.300,2589.955,2606.622,2623.288,2639.944,2656.611,2673.277,2689.933,2706.600,2723.266,2739.922,2756.588,2773.255,2789.911,2806.577,2823.233,2839.900,2856.566,2873.222,2889.888,2906.555,2923.211,2939.877,2956.544,2973.200,2989.866,3006.533,3023.188,3039.855,3056.522,3073.177,3089.844,3106.500,3123.166,3139.833,3156.488,3173.155,3189.822,3206.477,3223.144,3239.811,3256.466,3273.133,3289.800,3306.455,3323.122,3339.777,3356.444,3373.111,3389.777,3406.433,3423.100,3439.755,3456.422,3473.088,3489.744,3506.411,3523.077,3539.733,3556.400,3573.066,3589.722,3606.388,3623.055,3639.711,3656.377,3673.033,3689.700,3706.366,3723.022,3739.688,3756.355,3773.011,3789.677,3806.344,3823,3839.666,3856.333,3872.988,3889.655,3906.322,3922.977,3939.644,3956.300,3972.966,3989.633,4006.288,4022.955,4039.622,4056.277,4072.944,4089.611,4106.266,4122.933,4139.600,4156.255,4172.922,4189.588,4206.244,4222.911,4239.577,4256.233,4272.900,4289.555,4306.222,4322.888,4339.544,4356.211,4372.877,4389.533,4406.200,4422.866,4439.522,4456.188,4472.855,4489.511,4506.177,4522.844,4539.500,4556.166,4572.822,4589.488,4606.155,4622.811,4639.477,4656.144,4672.800,4689.466,4706.133,4722.788,4739.455,4756.122,4772.777,4789.444,4806.100,4822.766,4839.433,4856.088,4872.755,4889.422,4906.077,4922.744,4939.411,4956.066,4972.733,4989.400,5006.055,5022.722,5039.388,5056.044,5072.711,5089.377,5106.033,5122.700,5139.355,5156.022,5172.688,5189.344,5206.011,5222.677,5239.333,5256,5272.666,5289.322,5305.988,5322.655,5339.311,5355.977,5372.644,5389.300,5405.966,5422.622,5439.288,5455.955,5472.611,5489.277,5505.944,5522.600,5539.266,5555.933,5572.588,5589.255,5605.922,5622.577,5639.244,5655.911,5672.566,5689.233,5705.888,5722.555,5739.222,5755.877,5772.544,5789.211,5805.866,5822.533,5839.200,5855.855,5872.522,5889.188,5905.844,5922.511,5939.177,5955.833,5972.500,5989.166,6005.822,6022.488,6039.144,6055.811,6072.477,6089.133,6105.800,6122.466,6139.122,6155.788,6172.455,6189.111,6205.777,6222.444,6239.100}</property>
             </property>
@@ -21,9 +21,9 @@
         </object>
         </property>
         <property name="video_framecount" type="int">372</property>
-        <property name="startframe" type="int">46</property>
+        <property name="startframe" type="int">0</property>
         <property name="stepsize" type="int">1</property>
-        <property name="stepcount" type="int">313</property>
+        <property name="stepcount" type="int">372</property>
         <property name="starttime" type="double">0.0</property>
         <property name="readout" type="string">frame</property>
         <property name="playallsteps" type="boolean">true</property>
@@ -32,8 +32,8 @@
     <property name="clipcontrol" type="object">
     <object class="org.opensourcephysics.media.core.StepperClipControl">
         <property name="rate" type="double">1.0</property>
-        <property name="delta_t" type="double">16.662749287749286</property>
-        <property name="frame" type="int">358</property>
+        <property name="delta_t" type="double">16.816981132075473</property>
+        <property name="frame" type="int">371</property>
     </object>
     </property>
     <property name="coords" type="object">
@@ -108,7 +108,7 @@
                     <property name="x1" type="double">22.08028286189682</property>
                     <property name="y1" type="double">400.2495840266223</property>
                     <property name="x2" type="double">22.787437603993325</property>
-                    <property name="y2" type="double">482.98668885191347</property>
+                    <property name="y2" type="double">482.9866888519135</property>
                 </object>
                 </property>
             </property>
@@ -2020,7 +2020,44 @@
     </property>
     <property name="selectedtrack" type="string">mass A</property>
     <property name="dividers" type="array" class="[D">
-        <property name="array" type="string">{0.6712256706996318,0.5873015873015873,1.0,0.46449237243556024}</property>
+        <property name="array" type="string">{0.6703517587939698,0.590625,1.0,0.464321608040201}</property>
+    </property>
+    <property name="views" type="array" class="[[Lorg.opensourcephysics.cabrillo.tracker.TView;">
+        <property name="[1]" type="array" class="[Lorg.opensourcephysics.cabrillo.tracker.TView;">
+            <property name="[1]" type="object">
+            <object class="org.opensourcephysics.cabrillo.tracker.TableTView">
+                <property name="selected_track" type="string">mass A</property>
+                <property name="track_columns" type="array" class="[[Ljava.lang.String;">
+                    <property name="[0]" type="array" class="[Ljava.lang.String;">
+                        <property name="[0]" type="string">mass A</property>
+                        <property name="[1]" type="string">t</property>
+                        <property name="[2]" type="string">x</property>
+                        <property name="[3]" type="string">y</property>
+                        <property name="[4]" type="string">v</property>
+                    </property>
+                </property>
+                <property name="column_formats" type="array" class="[[[Ljava.lang.String;">
+                    <property name="[0]" type="array" class="[[Ljava.lang.String;">
+                        <property name="[0]" type="array" class="[Ljava.lang.String;">
+                            <property name="[0]" type="string">mass A</property>
+                            <property name="[1]" type="string">t</property>
+                            <property name="[2]" type="string">0.000</property>
+                        </property>
+                        <property name="[1]" type="array" class="[Ljava.lang.String;">
+                            <property name="[0]" type="string">mass A</property>
+                            <property name="[1]" type="string">step</property>
+                            <property name="[2]" type="string">0</property>
+                        </property>
+                        <property name="[2]" type="array" class="[Ljava.lang.String;">
+                            <property name="[0]" type="string">mass A</property>
+                            <property name="[1]" type="string">frame</property>
+                            <property name="[2]" type="string">0</property>
+                        </property>
+                    </property>
+                </property>
+            </object>
+            </property>
+        </property>
     </property>
     <property name="selected_view_types" type="array" class="[I">
         <property name="array" type="string">{0,1,2,3}</property>

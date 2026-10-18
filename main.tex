@@ -46,7 +46,7 @@
 		Físicamente, el peso $mg$ acelera el cuerpo, la resistencia $kv$ lo frena, y esa resistencia crece con la velocidad. Por eso la velocidad se acerca a un valor límite, la velocidad terminal $v_{\infty} = mg/k$.
 		\\ Este modelo sí tiene solución exacta:
 		$$v(t) = \frac{mg}{k}\left(1 - e^{-kt/m}\right) + v_0\,e^{-kt/m}$$
-		
+
 		Viendo que se tiene una solución para el modelo, se quiso encontrar el valor de k que representa el coeficiente de viscosidad del fluido. Por medio de:
 		datos experimentales, simulación usando el método Runge-Kutta y un ajuste por IA.
 		\\ Entre la pelota y el globo, es probable que la pelota muestre resultados más fiables que el globo, debido a que el globo al ser tan ligero
@@ -60,11 +60,11 @@
 	% ==========================================
 	% PROCEDIMIENTO
 	% ==========================================
-	
+
 	\subsection{Materiales y Equipamiento}
 	\begin{itemize}
 		\item \textbf{Pelota:} Se usó una pelota de fútbol mediana de masa 0.443kg.
-		\item \textbf{Globo:} Un globo normal, de masa 0.002kg 
+		\item \textbf{Globo:} Un globo normal, de masa 0.002kg
 		\item \textbf{(Software) Tracker:} Para facilitar la toma de datos, se usó tracker que cálcula y gráfica automáticamente solo con el video \cite{Tracker}.
 		\item \textbf{(Software) VsCode:} Para poder editar el reporte .tex (Latex), crear la app y el ajuste de IA (Python, con las librerías NumPy \cite{NumPy} y SciPy \cite{SciPy})
 		\item \textbf{(Software) Github:} Se usó como repositorio general del proyecto completo, para que los 3 integrantes pudiesen subir y estar actualizados con los archivos del proyecto.
@@ -74,7 +74,7 @@
 
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=10em]{Media/d1.png} 
+		\includegraphics[width=10em]{Media/d1.png}
 		\caption{Configuración de globo y pelota en función de los niveles del edificio de la Universidad Galileo.}
 		\label{fig:montaje}
 	\end{figure}
@@ -110,8 +110,8 @@
 	% RESULTADOS
 	% ==========================================
 	\section{Resultados}
-	
-	
+
+
 	\subsection{Tabla de Datos Experimentales}
 
 	\begin{table}[H]
@@ -151,7 +151,7 @@
 		\caption{Solución numérica por RK4 para la pelota.}
 		\label{fig:rk4-pelota}
 	\end{figure}
-	
+
 	% ==========================================
 	% DISCUSIÓN / ANÁLISIS
 	% ==========================================
@@ -202,7 +202,7 @@
     k = \frac{mg}{v_t}
     \label{eq:k_analitico}
 	\end{equation}
-	Para el \textbf{globo} ($m = 0{,}002~\text{kg}$), el último dato que tenemos de nuestro experimento
+	Para el \textbf{globo}, el último dato que tenemos de nuestro experimento
 	($t = 5{,}182~\text{s}$, $v = 1{,}766~\text{m/s}$) se toma para una aproximación de $v_t$:
 
 	\begin{align}
@@ -211,9 +211,8 @@
         \label{eq:k_globo}
 	\end{align}
 
-	Para la \textbf{pelota} ($m = 0{,}443~\text{kg}$), los datos disponibles
-	($t_{\max} = 2{,}0~\text{s}$, $v_{\max} \approx 15{,}5~\text{m/s}$) no alcanzan
-	la velocidad terminal, por lo que la ecuación~\eqref{eq:k_analitico} no aplica.
+	Para la \textbf{pelota}, los datos disponibles
+	($t_{\max} = 2{,}0~\text{s}$, $v_{\max} \approx 15{,}5~\text{m/s}$) no aplican para la ecuación~\eqref{eq:k_analitico}.
 	Para este caso, vamos a calcular $k$ haciendo uso de la expresión de caida libre $v=gt$:
 
 	\begin{align}
@@ -224,6 +223,23 @@
         \approx 0{,}059~\frac{\text{N}\cdot\text{s}}{\text{m}}
         \label{eq:k_pelota}
 	\end{align}
+
+	\subsection{Análisis de Resultados}
+
+	Para el \textbf{globo}, el análisis arroja que $k \approx 0{,}0111~\text{N·s/m}$, mientras que el ajuste
+	del optimizador nos dió  $k = 0{,}01736~\text{N·s/m}$, lo que supone un error porcentual de \textbf{56\%}. Como
+	podemos observar, ninguno de los dos métodos refleja con exactitud el comportamiento del globo, en especial el segundo, debido
+	al coeficiente del ajuste $R^2 = 0{,}097$; El modelo difiere casi en su totalidad de la distribución de la data del globo.
+	El principal factor de que esto ocurra es que \textbf{la EDO que se planteo al principio asume una caida libre completamente recta},
+	mientras que en el trayecto real del globo pueden haber pequeñas desviaciones o vaivenes en su caida que alteren las componentes reales de la velocidad puntual.
+	\\
+	Para la \textbf{pelota}, la constante $k = 0{,}19496~\text{N·s/m}$ presenta un ajuste mucho mejor de $R^2 = 0{,}745$, en parte a que tenemos una trayectoria de caida más estable.
+	La data obtenida para esta no muestra que haya llegado a la velocidad terminal teórica de $v_t \approx 22{,}3~\text{m/s}$ dentro del tiempo de caida total
+	de $t \approx 2~\text{s}$, pero aún asi se puede
+	ver la influencia de la resistencia viscosa del aire en la diferencia del dato final medido ($v \approx 15{,}5~\text{m/s}$)
+	y la caída libre ideal ($v_{cl} = 19{,}62~\text{m/s}$).\\
+	Como podemos ver en ambos casos, calcular la constante $k$ respectiva de manera analitica es extremadamente complicado
+	por las razones ya comentadas: \textbf{El trayecto no completamente vertical para el caso del globo y un tiempo de caida muy pequeño para la pelota.}
 
 	% ==========================================
 	% CONCLUSIÓN

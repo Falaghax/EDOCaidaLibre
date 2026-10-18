@@ -46,16 +46,11 @@
 		Físicamente, el peso $mg$ acelera el cuerpo, la resistencia $kv$ lo frena, y esa resistencia crece con la velocidad. Por eso la velocidad se acerca a un valor límite, la velocidad terminal $v_{\infty} = mg/k$.
 		\\ Este modelo sí tiene solución exacta:
 		$$v(t) = \frac{mg}{k}\left(1 - e^{-kt/m}\right) + v_0\,e^{-kt/m}$$
-		
+
 		Viendo que se tiene una solución para el modelo, se quiso encontrar el valor de k que representa el coeficiente de viscosidad del fluido. Por medio de:
 		datos experimentales, simulación usando el método Runge-Kutta y un ajuste por IA.
 		\\ Entre la pelota y el globo, es probable que la pelota muestre resultados más fiables que el globo, debido a que el globo al ser tan ligero
 		al momento de realizar el experimento se desviaba con facilidad a diferencia de la pelota, por lo que los datos del globo presentarán un error más grande.
-	% ==========================================
-	% MODELO MATEMATICO
-	% ==========================================
-	\section{Modelo Matemático}
-
 
 	% ==========================================
 	% PROCEDIMIENTO
@@ -66,7 +61,7 @@
 	\subsection{Materiales y Equipamiento}
 	\begin{itemize}
 		\item \textbf{Pelota:} Se usó una pelota de fútbol mediana de masa 0.443kg.
-		\item \textbf{Globo:} Un globo normal, de masa 0.002kg 
+		\item \textbf{Globo:} Un globo normal, de masa 0.002kg
 		\item \textbf{(Software) Tracker:} Para facilitar la toma de datos, se usó tracker que cálcula y gráfica automáticamente solo con el video.
 		\item \textbf{(Software) VsCode:} Para poder editar el reporte .tex (Latex), crear la app y el ajuste de IA (Python)
 		\item \textbf{(Software) Github:} Se usó como repositorio general del proyecto completo, para que los 3 integrantes pudiesen subir y estar actualizados con los archivos del proyecto.
@@ -95,8 +90,8 @@
 	% RESULTADOS
 	% ==========================================
 	\section{Resultados}
-	
-	
+
+
 	\subsection{Tabla de Datos Experimentales}
 
 	\begin{table}[H]
@@ -136,17 +131,80 @@
 		\caption{Solución numérica por RK4 para la pelota.}
 		\label{fig:rk4-pelota}
 	\end{figure}
-	
+
 	% ==========================================
 	% DISCUSIÓN / ANÁLISIS
 	% ==========================================
 	\section{Discusión / Análisis}
-	Esta es la sección más importante del reporte. Aquí se interpretan los resultados y se conecta la matemática con la física del problema:
-	\begin{itemize}
-		\item Muestren analíticamente la resolución de la EDO por variables separables para obtener la solución general y particular.
-		\item Calculen el valor exacto del coeficiente global de enfriamiento ($k$) para cada material.
-		\item Expliquen el comportamiento de las curvas analizando las propiedades termodinámicas de los materiales (conductividad térmica, capacidad calorífica, aislamiento). ¿Se validó la hipótesis?
-	\end{itemize}
+
+	\subsection{Resolución Analítica de la EDO}
+	Tomando en cuenta el modelo propuesto en la introducción, tenemos la siguiente Ecuación Diferencial.
+	\begin{equation}
+        m\,\frac{dv}{dt} = mg - kv
+	\end{equation}
+	donde $m$ es la masa del objeto en caida libre y $k$ es el coeficiente de arrastre.
+	Esta es una \textbf{EDO Separable}, entonces podemos reorganizar sus terminos:
+	\begin{equation}
+        \frac{v'}{mg - kv} = \frac{1}{m}
+	\end{equation}
+	Integrando ambos lados respecto a t:
+	\begin{equation}
+        -\frac{1}{k}\ln\left|mg - kv\right| = \frac{t}{m} + C
+	\end{equation}
+	Despejando $v$ de la expresión:
+	\begin{equation}
+        v(t) = \frac{mg}{k} + C\,e^{-\tfrac{k}{m}t}
+	\end{equation}
+	Esta de aqui es la  \textbf{solución general de la EDO}. Podemos aplicar la condición $v(0) = v_0$ para despejar $C$:
+	\begin{equation}
+        v_0 = \frac{mg}{k} + C \quad\Rightarrow\quad C = v_0 - \frac{mg}{k}
+	\end{equation}
+	De aqui se obtiene la siguiente \textbf{solución particular para la EDO}:
+	\begin{equation}
+        \boxed{v(t) = \frac{mg}{k}\!\left(1 - e^{-\tfrac{k}{m}t}\right) + v_0\,e^{-\tfrac{k}{m}t}}
+        \label{eq:sol_particular}
+	\end{equation}
+	Si analizamos esta expresión cuando $t \to \infty$, el término exponencial se anula y la velocidad converge a la expresión para la \textbf{velocidad terminal}:
+	\begin{equation}
+        \lim_{t\to\infty} v(t) = \frac{mg}{k}
+	\end{equation}
+
+
+	\subsection{Cálculo analítico de la constante \boldmath$k$}
+
+	Con la solución particular de la EDO \eqref{eq:sol_particular}, partimos del supuesto que empezamos en reposo, osea  $v_0 \approx 0$:
+	\begin{equation}
+        v(t) = \frac{mg}{k}\!\left(1 - e^{-\tfrac{k}{m}t}\right)
+	\end{equation}
+	Si analizamos esta expresión a medida que $t \to \infty$ la exponencial se anula y $v_t = mg/k$.
+	Si ahora despejamos para el coeficiente \boldmath$k$:
+
+	\begin{equation}
+    k = \frac{mg}{v_t}
+    \label{eq:k_analitico}
+	\end{equation}
+	Para el \textbf{globo} ($m = 0{,}002~\text{kg}$), el último dato que tenemos de nuestro experimento
+	($t = 5{,}182~\text{s}$, $v = 1{,}766~\text{m/s}$) se toma para una aproximación de $v_t$:
+
+	\begin{align}
+        k_{\text{globo}} &= \frac{(0{,}002~\text{kg})(9{,}81~\text{m/s}^2)}{1{,}766~\text{m/s}} \notag \\
+        &\approx 0{,}0111~\frac{\text{N}\cdot\text{s}}{\text{m}}
+        \label{eq:k_globo}
+	\end{align}
+
+	Para la \textbf{pelota} ($m = 0{,}443~\text{kg}$), los datos disponibles
+	($t_{\max} = 2{,}0~\text{s}$, $v_{\max} \approx 15{,}5~\text{m/s}$) no alcanzan
+	la velocidad terminal, por lo que la ecuación~\eqref{eq:k_analitico} no aplica.
+	Para este caso, vamos a calcular $k$ haciendo uso de la expresión de caida libre $v=gt$:
+
+	\begin{align}
+        v(2{,}0) &= 9{,}81 \times 2{,}0 = 19{,}62~\text{m/s} \notag \\
+        \Delta v &= 19{,}62 - 15{,}49 = 4{,}13~\text{m/s} \notag \\
+        k_{\text{pelota}} &\approx \frac{m\,\Delta v}{t_{\max}\,\bar{v}}
+        = \frac{(0{,}443)(4{,}13)}{(2{,}0)(15{,}49)}
+        \approx 0{,}059~\frac{\text{N}\cdot\text{s}}{\text{m}}
+        \label{eq:k_pelota}
+	\end{align}
 
 	% ==========================================
 	% CONCLUSIÓN

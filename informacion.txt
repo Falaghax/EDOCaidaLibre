@@ -1,0 +1,4 @@
+Para que la aplicación "runge_kutta_app.py" funcione, se necesita tener las librerías matplotlib en python
+Se pueden instalar usando: pip install matplotlib numpy
+
+Link del video explicativo: https://youtu.be/UMYkqCJIwl0

@@ -33,24 +33,24 @@
 		Este experimento se realizó para implementar modelos matemáticos basados en ecuaciones diferenciales ordinarias (EDO) para lograr describir un fenómeno físico.
 		Dicho fenómeno fue el de la resistencia dinámica de las fuerzas viscosas, en este caso se analiza el comportamiento de una pelota y un globo al dejarlas caer como caída libre desde un sexto y primer nivel respectivamente (esto con la idea de que alcancen sus velocidades terminales),
 		con el fin de observar sus comportamientos a través del aire como fluido viscoso. Se graban ambos videos de las dos caídas, se guardan los datos posición-tiempo y luego se procesan en Tracker para poder graficar la curva velocidad vs tiempo.
-		Completar...
-		Esta sección es un breve resumen de los aspectos más importantes del reporte (máximo 150-200 palabras). Se incluye el propósito del experimento, el método de recolección de datos utilizado, los hallazgos cuantitativos más relevantes (como los coeficientes de enfriamiento hallados) y la conclusión principal basada en el comportamiento de los materiales.
+		Se descubre que calcular el coeficiente de viscosidad de manera exacta (ya sea por cálculos teóricos, la app o el ajuste de IA) no fue posible, ya que en cada uno de los métodos usados siempre hubieron otros factores que impedía encontrar un solo valor de k exacto.
 	\end{abstract}
 
 	% ==========================================
 	% INTRODUCCIÓN
 	% ==========================================
 	\section{Introducción}
-	En esta sección se establece el marco teórico y los objetivos del laboratorio. La introducción debe redactarse en prosa e incluir de forma implícita:
-	\begin{itemize}
-		\item Se conoce como resistencia dinámica de una fuerza viscosa a la oposición que presenta el fluido en dirección opuesta a la fuerza aplicada para atravesar dicho fluido.
-		\item Contexto físico y químico de la transferencia de calor y la Ley de Enfriamiento de Newton.
-		\item Planteamiento matemático general de la EDO a resolver.
-		\item Los objetivos principales del proyecto.
-		\item Hipótesis clara sobre qué material retendrá mejor el calor y por qué, basándose en la naturaleza química del recipiente.
-	\end{itemize}
-
-
+		Se conoce como resistencia dinámica de una fuerza viscosa a la oposición que presenta el fluido en dirección opuesta a la fuerza aplicada para atravesar dicho fluido.
+		Para describir este fenómeno físico se usó un modelo matemático basado en la ecuación diferencial ordinaria (EDO), siendo un modelo de una caída con resistencia del aire:
+		$$m\,v' = m\,g - k\,v \quad\Longrightarrow\quad v' = g - \frac{k}{m}\,v$$
+		Físicamente, el peso $mg$ acelera el cuerpo, la resistencia $kv$ lo frena, y esa resistencia crece con la velocidad. Por eso la velocidad se acerca a un valor límite, la velocidad terminal $v_{\infty} = mg/k$.
+		\\ Este modelo sí tiene solución exacta:
+		$$v(t) = \frac{mg}{k}\left(1 - e^{-kt/m}\right) + v_0\,e^{-kt/m}$$
+		
+		Viendo que se tiene una solución para el modelo, se quiso encontrar el valor de k que representa el coeficiente de viscosidad del fluido. Por medio de:
+		datos experimentales, simulación usando el método Runge-Kutta y un ajuste por IA.
+		\\ Entre la pelota y el globo, es probable que la pelota muestre resultados más fiables que el globo, debido a que el globo al ser tan ligero
+		al momento de realizar el experimento se desviaba con facilidad a diferencia de la pelota, por lo que los datos del globo presentarán un error más grande.
 	% ==========================================
 	% MODELO MATEMATICO
 	% ==========================================
@@ -64,15 +64,22 @@
 	Breve descripción macroscópica de cómo se montó el experimento en el laboratorio o en casa.
 
 	\subsection{Materiales y Equipamiento}
-	Detalle de los recursos físicos, digitales o de hardware empleados.
 	\begin{itemize}
-		\item \textbf{Recipientes:} Descripción de los 3 materiales elegidos (ej. Aluminio, Vidrio, Poliestireno).
-		\item \textbf{Sensor/Medición:} Termómetro convencional o la Tarjeta de Desarrollo Institucional con sensor de temperatura.
-		\item \textbf{Software (si aplica):} Entorno de desarrollo para el script de adquisición de datos (Python / Java) y software para el procesamiento de texto (\LaTeX).
+		\item \textbf{Pelota:} Se usó una pelota de fútbol mediana de masa 0.443kg.
+		\item \textbf{Globo:} Un globo normal, de masa 0.002kg 
+		\item \textbf{(Software) Tracker:} Para facilitar la toma de datos, se usó tracker que cálcula y gráfica automáticamente solo con el video.
+		\item \textbf{(Software) VsCode:} Para poder editar el reporte .tex (Latex), crear la app y el ajuste de IA (Python)
+		\item \textbf{(Software) Github:} Se usó como repositorio general del proyecto completo, para que los 3 integrantes pudiesen subir y estar actualizados con los archivos del proyecto.
+		\item \textbf{(IA) Claude:} Para hacer el ajuste con IA y ayuda con la app.
 	\end{itemize}
-
 	\subsection{Diagrama de Configuración del Laboratorio}
-	Incluya un diagrama, esquema o fotografía del montaje experimental (la disposición del recipiente, el agua caliente y la posición del sensor/termómetro).
+
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=10em]{Media/d1.png}
+		\caption{Configuración de globo y pelota en función de los niveles del edificio de la Universidad Galileo.}
+		\label{fig:montaje}
+	\end{figure}
 
 
 	\subsection{Pasos del Procedimiento}
@@ -88,16 +95,48 @@
 	% RESULTADOS
 	% ==========================================
 	\section{Resultados}
-	Esta sección incluye \textbf{únicamente} los datos crudos o procesados y las curvas teóricas obtenidas. No se introducen interpretaciones aquí.
-
+	
+	
 	\subsection{Tabla de Datos Experimentales}
-	A continuación, se muestra una tabla de ejemplo con la estructura requerida para ordenar el tiempo ($t$) y la temperatura medida ($T$):
 
+	\begin{table}[H]
+		\centering
+		\begin{tabular}{ccc|ccc}
+			\hline
+			\multicolumn{3}{c|}{\textbf{Globo} ($m = 0.002$~kg)} & \multicolumn{3}{c}{\textbf{Pelota} ($m = 0.443$~kg)} \\
+			$t$ (s) & $y$ (m) & $v$ (m/s) & $t$ (s) & $y$ (m) & $v$ (m/s) \\
+			\hline
+			0.017 & $-0.012$ & 0.051 & 0.067 & $-0.099$ & 0.460 \\
+			0.583 & $-0.278$ & 0.852 & 0.283 & $-0.308$ & 1.334 \\
+			1.166 & $-0.673$ & 0.513 & 0.500 & $-0.707$ & 2.361 \\
+			1.733 & $-0.975$ & 0.809 & 0.717 & $-1.285$ & 3.182 \\
+			2.316 & $-1.603$ & 1.480 & 0.933 & $-2.075$ & 4.195 \\
+			2.883 & $-2.361$ & 1.262 & 1.133 & $-3.077$ & 5.731 \\
+			3.466 & $-2.963$ & 1.050 & 1.350 & $-4.477$ & 7.630 \\
+			4.032 & $-3.590$ & 0.872 & 1.567 & $-6.399$ & 9.794 \\
+			4.616 & $-4.267$ & 1.423 & 1.783 & $-8.969$ & 14.045 \\
+			5.182 & $-5.217$ & 1.766 & 2.000 & $-12.630$ & 15.488 \\
+			\hline
+		\end{tabular}
+		\caption{NOTA: Esta tabla está truncada.}
+	\end{table}
 
 	\subsection{Gráficas y Ajuste del Modelo}
-	En esta sección deben graficar sus datos. El siguiente gráfico lee directamente el archivo adjunto en el .zip para generar los puntos y la línea de mejor ajuste:
 
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=\columnwidth]{Media/Kutta-globo.png}
+		\caption{Solución numérica por RK4 para el globo.}
+		\label{fig:rk4-globo}
+	\end{figure}
 
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=\columnwidth]{Media/Kutta-pelota.png}
+		\caption{Solución numérica por RK4 para la pelota.}
+		\label{fig:rk4-pelota}
+	\end{figure}
+	
 	% ==========================================
 	% DISCUSIÓN / ANÁLISIS
 	% ==========================================

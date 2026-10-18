@@ -152,6 +152,34 @@
 		\label{fig:rk4-pelota}
 	\end{figure}
 
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=\columnwidth]{Media/v_vs_t_analitico.png}
+		\caption{Solución gráfica por optimización de IA.}
+		\label{fig:IA-analisis}
+	\end{figure}
+
+	\subsection{Comparación del coeficiente $k$}
+
+	\begin{table}[H]
+		\centering
+		\begin{tabular}{lcc}
+			\hline
+			 & \textbf{Globo} & \textbf{Pelota} \\
+			\hline
+			$m$ (kg) & 0.002 & 0.443 \\
+			$k$ analítico (N$\cdot$s/m) & 0.0111 & 0.059 \\
+			$k$ ajuste IA (N$\cdot$s/m) & 0.01736~$\pm$~0.00046 & 0.195~$\pm$~0.019 \\
+			$R^2$ del ajuste IA & 0.097 & 0.745 \\
+			$v_t = mg/k$ ajuste IA (m/s) & 1.13 & 22.29 \\
+			$k$ usado en RK4 (N$\cdot$s/m) & 0.01736 & 0.195 \\
+			Paso $h$ en RK4 (s) & 0.05 & 0.5 \\
+			\hline
+		\end{tabular}
+		\caption{Valores de $k$ obtenidos por cálculo analítico, ajuste por IA y simulación RK4.}
+		\label{tab:k}
+	\end{table}
+
 	% ==========================================
 	% DISCUSIÓN / ANÁLISIS
 	% ==========================================

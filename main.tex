@@ -271,13 +271,24 @@
 	% CONCLUSIÓN
 	% ==========================================
 	\section{Conclusión}
-	Esta sección incluye un cierre conciso basado en la evidencia de los resultados y cómo se relacionan con los objetivos iniciales. Se debe destacar de manera clara qué se aprendió acerca del modelado por ecuaciones diferenciales en procesos de transferencia de calor reales.
+	\begin{enumerate}
+		\item El modelo ideal es limitado ante factores ambientales: 
+		La EDO lineal de primer orden describe conceptualmente la resistencia del aire, pero falla en cuerpos ligeros como el globo, pues las perturbaciones horizontales y turbulencias rompen la suposición de caída perfectamente vertical.
+		\item Un objeto con mayor masa e inercia, como la pelota, reduce las desviaciones experimentales y permite validar el efecto del arrastre viscoso con mayor confiabilidad.
+		\item No existe un coeficiente $k$ único: Se concluye que calcular una sola constante de viscosidad exacta por métodos analíticos o numéricos resulta inviable si la altura/tiempo de caída son insuficientes para alcanzar la velocidad terminal.
+	\end{enumerate}
 
 	\section{Anexos}
 	\begin{figure}[H]
 		\centering
 		\includegraphics[width=10em]{Media/Foto Galileo.jpeg}
 		\caption{Ubicación de ambos experimentos.}
+		\label{fig:montaje}
+	\end{figure}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=10em]{Media/Pelota.jpeg}
+		\caption{Pelota de fútbol utilizada.}
 		\label{fig:montaje}
 	\end{figure}
 
